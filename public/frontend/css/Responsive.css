@@ -1,0 +1,112 @@
+﻿@media screen and (min-width: 1025px ) {
+    .post-field.vitri .sbHolder {
+        width: 310px;
+    }
+
+    #txtGia.form-control {
+        width: 240px !important;
+    }
+
+    .post-field .sbHolder {
+        width: 310px !important;
+    }
+
+    #txtDientich.form-control {
+        width: 190px !important;
+    }
+
+    #txtDiadiem.form-control {
+        width: 950px !important;
+    }
+
+    .w-230 {
+        width: 210px !important;
+    }
+
+    .post-field.huongnha .sbHolder, #txtSotoilet {
+        width: 213px !important;
+    }
+
+    #txtTieude.form-control, #tarNoidung {
+        width: 950px !important;
+    }
+
+    #boxarea {
+        width: 83%;
+    }
+
+    .post-field {
+        width: 94%;
+    }
+
+    .w-390 {
+        width: 358px !important;
+    }
+
+    #spanDidong {
+        margin-right: 200px !important;
+    }
+
+    .codepost {
+        width: 250px !important;
+    }
+
+    .percent-post {
+        right: 0px !important;
+    }
+
+    .post-field .post-tab {
+        width: 155px;
+    }
+}
+
+ul.group-prd li .title a:visited {
+    color: #888 !important;
+}
+
+ul.group-prd li .title a .highlight {
+    background: yellow;
+}
+
+ul.group-project li .title a:visited {
+    color: #afaaaa !important;
+}
+
+.main-head {
+    -webkit-transition: top 0.3s;
+    -moz-transition: top 0.3s;
+    -o-transition: top 0.3s;
+    transition: top 0.3s;
+}
+
+.article-content {
+    line-height: 22px !important;
+}
+
+    .article-content h1 {
+        font-size: 16px !important;
+    }
+
+    .article-content h2 {
+        font-size: 14px !important;
+    }
+
+    .article-content a {
+        color: #0286d0 !important;
+    }
+
+    .article-content strong {
+        font-size: 14px !important;
+    }
+
+    .article-content a strong {
+        font-size: 14px !important;
+    }
+
+    .article-content p {
+        text-align: justify;
+    }
+
+    .article-content table {
+        margin-bottom: 10px !important;
+    }

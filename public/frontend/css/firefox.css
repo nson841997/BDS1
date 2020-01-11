@@ -1,0 +1,30 @@
+﻿@-moz-document url-prefix() {
+    input.form-control#txtDientich {
+        width: 186px !important;
+    }
+
+    input.form-control#txtSotoilet {
+        width: 215px !important;
+    }
+
+    #btnLoginFacebook, #btnLoginGoogle, .btn.lg-fb, .btn.lg-gplus {
+        line-height: 39px;
+    }
+
+    #menuOtherWeb {
+        margin-right: 10px;
+    }
+
+    ul#tuvan li.first .descriptions {
+        height: 80px;
+        margin-top: 4px;
+    }
+
+    #tuvancontent ul li.first .content .description {
+        height: 80px;
+    }
+
+    .sort-search {
+        margin-right: 8px;
+    }
+}
