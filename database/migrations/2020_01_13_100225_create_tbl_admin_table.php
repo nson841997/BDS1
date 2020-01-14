@@ -20,6 +20,7 @@ class CreateTblAdminTable extends Migration
             $table->string('admin_name');
             $table->string('admin_phone');
             $table->tinyInteger('level');
+            $table->integer('status');
             $table->timestamps();
         });
     }

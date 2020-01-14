@@ -14,15 +14,10 @@
         <div class="col-xs-12 col-md-12 col-lg-12">
 
             <div class="panel panel-primary">
-
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
-                            @if (session('thongbao'))
-                            <div class="alert alert-success" role="alert">
-                                <strong> {{ session('thongbao') }}</strong>
-                            </div>
-                            @endif
+                            
                             <a href="/admin/user/add" class="btn btn-primary">Thêm Thành viên</a>
                             <table class="table table-bordered" style="margin-top:20px;">
 
@@ -33,28 +28,39 @@
                                         <th>Name</th>
                                         <th>Phone</th>
                                         <th>Level</th>
+                                        <th>status</th>
                                         <th width='18%'>Tùy chọn</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @foreach ($tbl_admin as $row)
-                                    <tr>
-                                        <td>{{ $row->admin_id }}</td>
-                                        <td>{{ $row->admin_email }}</td>
-                                        <td>{{ $row->admin_name }}</td>
-                                        <td>{{ $row->admin_phone }} </td>
-                                        <td>{{ $row->level }}</td>
-                                        <td>
-                                            <a href="/admin/user/edit/{{ $row->admin_id }}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-                                            <a href="/admin/user/del/{{ $row->admin_id }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+                               
+                                @foreach ($data as $item)
+                                
+                                <tr>
+                                    <td>{{ $item->admin_id }}</td>
+                                    <td>{{ $item->admin_email }}</td>
+                                    <td>{{ $item->admin_name }}</td>
+                                    <td>{{ $item->admin_phone }}</td>
+                                    <td>{{ $item->level }}</td>
+                                    <td>
+                                    @if ($item->status == 0)
+                                    <a href="{{'/unactive_brand_product/'.$item->admin_id}}"><span class="fa-thumb-styling-down fa fa-thumbs-down"> </span></a>
+                                    @else
+                                    <a href="{{'/active_brand_product/'.$item->admin_id}}"><span class="fa-thumb-styling-up fa fa-thumbs-up"> </span></a>
+                                    @endif
+                                    </td>
+                                     <td>
+                                            <a href="/backend/user/edit/{{ $item->admin_id }}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+                                            <a href="/backend/user/del/{{ $item->admin_id }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                         </td>
-                                    </tr>
-                                    @endforeach
+                                    
+                                </tr>
+                                @endforeach
+                                
                                 </tbody>
                             </table>
                             <div align='right'>
                                 <ul class="pagination">
-                                    {{ $tbl_admin->appends(['search'=>request()->search])->links() }}
+                                   
                                 </ul>
                             </div>
                         </div>
