@@ -19,8 +19,8 @@ class CreateTblUserTable extends Migration
             $table->string('UserPassword');
             $table->string('UserMail');
             $table->string('ActiveCode');
-            $table->DateTime('FullName');
-            $table->string('BirthDay');
+            $table->string('FullName');
+            $table->DateTime('BirthDay');
             $table->string('phone');
             $table->string('Address')->nullable();
             $table->integer('RightID');
