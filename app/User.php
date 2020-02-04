@@ -5,24 +5,10 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\HasPermissionsTrait;
 
 class User extends Authenticatable
 {
-
-    // mặc định liên kết đến bảng users
-    //protected $table = "thanh_vien"; (liên kết đến bảng mặc định)
-
-    // mặc định khóa chính là id
-    // protected $primaryKey = 'Tên khóa chính trong bảng';
-
-    // mặc đinh timestamps: true; (có 2 trường created_at, updated_at)
-
-    // nếu không dùng 2 trường created_at, updated_at
-    public $timestamps = false;
-
-    // mặc định khóa chính là khóa tự tăng (AI)
-    // public $incrementing = false; ()
-
     use Notifiable;
 
     /**
@@ -51,16 +37,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function info2()
-    {
-        return $this->hasOne('App\Models\info', 'id_users', 'id');
-    }
-
-    public function info()
-    {
-        return $this->hasMany('App\Models\full', 'id_user', 'id');
-    }
-
-
 }

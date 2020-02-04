@@ -19,9 +19,11 @@ class CreateTblAdminTable extends Migration
             $table->string('admin_password');
             $table->string('admin_name');
             $table->string('admin_phone');
-            $table->tinyInteger('level');
-            $table->integer('status');
+            $table->tinyInteger('level')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
+            //taọ cột tên remember_token
+            $table->rememberToken();;
         });
     }
 

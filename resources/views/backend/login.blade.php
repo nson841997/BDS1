@@ -43,12 +43,12 @@
             <h6><a href="{{ ('/register') }}">Đăng ký</a></h6>
             <div class="clearfix"></div>
             <input type="submit" value="Đăng Nhập" name="login">  --}}
-
+            
             
             <input type="text" class="ggg" name="admin_email" placeholder="Nhập Email" required="">
             <input type="password" class="ggg" name="admin_password" placeholder="Nhập Password" required="">
             <span><input type="checkbox" />Nhớ đăng nhập</span>
-            <h6><a href="#">Quên mật khẩu?</a></h6>
+            <h6><a href="{{ ('/register') }}">Đăng ký</a></h6>
             <div class="clearfix"></div>
             <input type="submit" value="Đăng Nhập" name="login">
         </form>

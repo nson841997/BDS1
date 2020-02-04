@@ -8,12 +8,28 @@ use Illuminate\Support\Facades\Redirect;
 use DB;
 use Session;
 
-
-
 class LoginController extends Controller
 {
+
+    public function AuthLogin()
+    {   
+
+        
+        // $admin_id = $request->session()->get('tbl_admin', 'admin_id');
+        
+
+        $admin_id = Session::get('tbl_admin','admin_id');
+        if($admin_id)
+        {
+            return Redirect::to('index');
+        }else{
+            return Redirect::to('login')->send();
+        }
+    }
+
     public function getLogin()
     {
+        $this->AuthLogin();
         return view('backend/login');
     }
     public function postLogin(Request $request)
@@ -50,8 +66,9 @@ class LoginController extends Controller
     }
     public function  getLogout()
     {
-        Session::put('UserMail',null);
-        Session::put('UserPassword',null);
+        $this->AuthLogin();
+        Session::put('admin_name',null);
+        Session::put('admin_id',null);
         return Redirect::to('/login');
     }
 }

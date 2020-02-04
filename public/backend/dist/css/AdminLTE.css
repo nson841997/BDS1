@@ -4975,3 +4975,30 @@ table.text-center th {
     white-space: normal !important;
   }
 }
+/* Thêm css */
+.vertical-menu {
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.vertical-menu .item-menu {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+text-decoration: none;
+
+}
+
+.vertical-menu .item-menu:hover {
+background-color: #ccc;
+
+}
+.vertical-menu .item-menu:hover >.category-fix{
+display: inline;
+}
+.vertical-menu .item-menu.active {
+  background-color: #30a5ff;
+  color: white;
+}

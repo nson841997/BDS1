@@ -26,45 +26,56 @@
     <div class="w3layouts-main">
         <h2>Ms - Xin Chào</h2>
         
-        @if (session('thongbao'))
-                <div class="alert alert-danger" role="alert">
-                        <strong>
-                            {{ session('thongbao') }}
-                        </strong>
+        <div class="panel-body">
+            <form action="" method="post">
+                <?php
+                    $message = Session::get('message');
+                    if ($message)
+                    {
+                        echo '<div  class="alert alert-success">'.$message .'</div>';
+                        Session::put('message', null);
+                    }
+                ?>
+                    @csrf
+        <div class="row justify-content-center" style="margin-bottom:40px">
+
+            <div class="col-md-8 col-lg-8 col-lg-offset-2">
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email người dùng</label>
+                    <input type="text" name="admin_email" class="form-control" id="exampleInputEmail1" placeholder="Nhập Email">
                 </div>
-        @endif
-        
-        <form role="form" method="POST" action="{{ url('/register') }}">
-            {!! csrf_field() !!}
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="form-control" placeholder="Họ và tên" name="name" type="text" value="{{ old('UserName') }}" autofocus>
+                {!! showError($errors,'admin_email') !!}
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mật khẩu</label>
+                    <input type="password" name="admin_password" class="form-control" id="exampleInputEmail1" placeholder="Nhập mật khẩu">
+                </div>
+                {!! showError($errors,'admin_password') !!}
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Tên người dùng</label>
+                    <textarea style="resize: none;"  class="form-control" name="admin_name" id="exampleInputPassword1" placeholder="Nhập tên người dùng"></textarea>
+                </div>
+                {!! showError($errors,'admin_name') !!}
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Số điện thoại</label>
+                    <textarea style="resize: none;" class="form-control" name="admin_phone" id="exampleInputPassword1" placeholder="Nhập số điện thoại"></textarea>
+                </div>
+                {!! showError($errors,'admin_phone') !!}                       
+                
+                
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-lg-8 col-lg-offset-2 text-right">
+
+                    <button class="btn btn-success"  type="submit">Thêm thành viên</button>
+                    <button class="btn btn-danger" type="reset">Huỷ bỏ</button>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                    <input class="form-control" placeholder="Email" name="email" type="text" value="{{ old('UserMail') }}">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input class="form-control" placeholder="Mật khẩu" name="password" type="password">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input class="form-control" placeholder="Xác nhận mật khẩu" name="password_confirmation" type="password">
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-lg btn-primary btn-block">Đăng ký</button>
-            </div>
-            <center><a href="/{{ url('/login') }}">Quay về đăng nhập</a></center>
-        </form>
+        </div>
+        <div class="clearfix"></div>
+    </form>
+    </div>
 {{--        <p>Don't Have an Account ?<a href="registration.html">Create an account</a></p>--}}
     </div>
 </div>

@@ -28,6 +28,8 @@ class CreateTblUserTable extends Migration
             $table->boolean('UserStatus');
             $table->string('UserAvatar');
             $table->timestamps();
+            //taọ cột tên remember_token
+            $table->rememberToken();
         });
     }
 
